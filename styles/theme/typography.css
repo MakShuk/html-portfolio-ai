@@ -1,0 +1,118 @@
+/* Базовые настройки типографики */
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.5;
+    --letter-spacing-base: -0.01em;
+}
+
+body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    letter-spacing: var(--letter-spacing-base);
+    color: var(--text-primary);
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1, .h1 { font-size: 3.5rem; }
+h2, .h2 { font-size: 2.5rem; }
+h3, .h3 { font-size: 2rem; }
+h4, .h4 { font-size: 1.75rem; }
+h5, .h5 { font-size: 1.5rem; }
+h6, .h6 { font-size: 1.25rem; }
+
+/* Медиа-запросы для адаптивной типографики */
+@media (max-width: 768px) {
+    h1, .h1 { font-size: 2.5rem; }
+    h2, .h2 { font-size: 2rem; }
+    h3, .h3 { font-size: 1.75rem; }
+    h4, .h4 { font-size: 1.5rem; }
+    h5, .h5 { font-size: 1.25rem; }
+    h6, .h6 { font-size: 1rem; }
+}
+
+/* Утилиты для текста */
+.section-title {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--gradient-primary);
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+/* Специальные стили для навигации */
+.navbar-brand {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* Стили для кнопок */
+.btn {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 0.75rem 1.5rem;
+}
+
+.btn-lg {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+}
+
+/* Стили для форм */
+.form-control {
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+}
+
+.form-control::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* Анимированный текст */
+.typed-text-output {
+    font-family: var(--font-primary);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--primary);
+}

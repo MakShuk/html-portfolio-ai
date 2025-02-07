@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио</title>
+    
+    <!-- Зависимости -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Пользовательские стили -->
+    <link rel="stylesheet" href="styles/theme/colors.css">
+    <link rel="stylesheet" href="styles/theme/typography.css">
+    <link rel="stylesheet" href="styles/theme/dark-mode.css">
+    <link rel="stylesheet" href="styles/components/navbar.css">
+    <link rel="stylesheet" href="styles/components/hero.css">
+    <link rel="stylesheet" href="styles/components/about.css">
+    <link rel="stylesheet" href="styles/components/portfolio.css">
+    <link rel="stylesheet" href="styles/components/experience.css">
+    <link rel="stylesheet" href="styles/components/contact.css">
+    <link rel="stylesheet" href="styles/components/footer.css">
+    <link rel="stylesheet" href="styles/animations/transitions.css">
+    <link rel="stylesheet" href="styles/animations/parallax.css">
+    <link rel="stylesheet" href="styles/animations/hover.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Портфолио</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Обо мне</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Портфолио</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Опыт</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Контакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn theme-toggle" id="theme-toggle">
+                            <i class="fas fa-sun"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="display-4 fw-bold mb-4">Привет, я <span class="text-gradient">Разработчик</span></h1>
+                    <div class="typed-text-output"></div>
+                    <p class="lead mb-4">Создаю современные веб-решения</p>
+                    <a href="#contact" class="btn btn-primary btn-lg animated-button">
+                        Связаться со мной
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Обо мне" -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Обо мне</h2>
+            <div class="row">
+                <div class="col-lg-4" data-aos="fade-right">
+                    <div class="about-image">
+                        <img src="assets/images/profile.jpg" alt="Мое фото" class="img-fluid rounded-3">
+                    </div>
+                </div>
+                <div class="col-lg-8" data-aos="fade-left">
+                    <div class="skills-container">
+                        <!-- Здесь будут карточки навыков -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция портфолио -->
+    <section id="portfolio" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Мои проекты</h2>
+            <div class="portfolio-filters text-center mb-4">
+                <button class="btn btn-outline-primary active" data-filter="*">Все</button>
+                <button class="btn btn-outline-primary" data-filter=".web">Веб-сайты</button>
+                <button class="btn btn-outline-primary" data-filter=".app">Приложения</button>
+                <button class="btn btn-outline-primary" data-filter=".design">Дизайн</button>
+            </div>
+            <div class="row portfolio-container">
+                <!-- Здесь будут карточки проектов -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция опыта -->
+    <section id="experience" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Опыт работы</h2>
+            <div class="timeline">
+                <!-- Здесь будет временная линия -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Контактная форма -->
+    <section id="contact" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Свяжитесь со мной</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form id="contact-form" class="contact-form" data-aos="fade-up">
+                        <div class="mb-4">
+                            <input type="text" class="form-control" id="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="form-control" id="message" rows="5" placeholder="Сообщение" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg animated-button">
+                                Отправить
+                                <i class="fas fa-paper-plane ms-2"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="social-links mb-4">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <p class="copyright">&copy; <span class="current-year">2024</span> Все права защищены</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <!-- Пользовательские скрипты -->
+    <script src="js/utils/theme-switcher.js"></script>
+    <script src="js/utils/lazy-loading.js"></script>
+    <script src="js/components/navbar.js"></script>
+    <script src="js/components/typed-text.js"></script>
+    <script src="js/components/portfolio-filter.js"></script>
+    <script src="js/components/skills-progress.js"></script>
+    <script src="js/components/form-validation.js"></script>
+    <script src="js/animations/scroll-animations.js"></script>
+    <script src="js/animations/parallax.js"></script>
+    <script src="js/animations/hover-effects.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

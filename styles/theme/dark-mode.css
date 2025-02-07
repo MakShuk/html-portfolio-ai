@@ -1,0 +1,132 @@
+/* Стили для темной темы */
+[data-theme="dark"] {
+    /* Основные цвета фона */
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+/* Навигация в темной теме */
+[data-theme="dark"] .navbar {
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+[data-theme="dark"] .navbar-brand,
+[data-theme="dark"] .nav-link {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Карточки и секции */
+[data-theme="dark"] .card,
+[data-theme="dark"] .section-padding:not(.bg-light) {
+    background-color: var(--dark-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .bg-light {
+    background-color: #2c3e50 !important;
+}
+
+/* Формы */
+[data-theme="dark"] .form-control {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--border-color);
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary);
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Кнопки */
+[data-theme="dark"] .btn-outline-primary {
+    color: var(--primary-light);
+    border-color: var(--primary-light);
+}
+
+[data-theme="dark"] .btn-outline-primary:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--dark-bg);
+}
+
+/* Переключатель темы */
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+[data-theme="dark"] .theme-toggle {
+    color: var(--text-light);
+}
+
+.theme-toggle:hover {
+    transform: rotate(180deg);
+}
+
+/* Иконка темы */
+[data-theme="dark"] .theme-toggle .fa-sun {
+    display: inline-block;
+}
+
+[data-theme="dark"] .theme-toggle .fa-moon {
+    display: none;
+}
+
+.theme-toggle .fa-sun {
+    display: none;
+}
+
+.theme-toggle .fa-moon {
+    display: inline-block;
+}
+
+/* Тени для темной темы */
+[data-theme="dark"] .card,
+[data-theme="dark"] .btn,
+[data-theme="dark"] .form-control {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Социальные ссылки */
+[data-theme="dark"] .social-link {
+    color: var(--text-light);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .social-link:hover {
+    background-color: var(--primary);
+    color: var(--dark-bg);
+}
+
+/* Footer */
+[data-theme="dark"] .footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Анимации для темной темы */
+@media (prefers-reduced-motion: no-preference) {
+    .theme-transition {
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+}

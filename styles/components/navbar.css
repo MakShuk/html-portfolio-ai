@@ -1,0 +1,200 @@
+/* Основные стили навигации */
+.navbar {
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    padding: 0.5rem 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Брендинг */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Навигационные ссылки */
+.nav-link {
+    position: relative;
+    padding: 0.5rem 1rem !important;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Мобильное меню */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    transition: all 0.3s ease;
+}
+
+/* Анимация мобильного меню */
+.navbar-collapse {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 1rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-link {
+        padding: 0.75rem 1rem !important;
+        text-align: center;
+    }
+
+    .nav-link::after {
+        bottom: 5px;
+    }
+
+    /* Анимация появления ссылок */
+    .nav-item {
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: fadeInDown 0.3s ease forwards;
+    }
+
+    @keyframes fadeInDown {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .nav-item:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .nav-item:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .nav-item:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    .nav-item:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+
+    .nav-item:nth-child(5) {
+        animation-delay: 0.5s;
+    }
+}
+
+/* Темная тема */
+[data-theme="dark"] .navbar {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+[data-theme="dark"] .navbar-brand,
+[data-theme="dark"] .nav-link {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+    color: var(--primary-light);
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+[data-theme="dark"] .navbar-collapse {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Переключатель темы в навбаре */
+.theme-toggle {
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(180deg);
+    color: var(--primary);
+}
+
+/* Анимация прокрутки */
+.navbar-nav {
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .navbar-nav {
+    transform: translateY(0);
+}
+
+/* Индикатор активного пункта меню */
+.nav-indicator {
+    position: absolute;
+    bottom: -2px;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: all 0.3s ease;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}

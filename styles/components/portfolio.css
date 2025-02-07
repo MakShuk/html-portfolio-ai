@@ -1,0 +1,270 @@
+/* Секция портфолио */
+.portfolio-section {
+    position: relative;
+    background: var(--light-bg);
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+/* Фильтры */
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.portfolio-filters button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.portfolio-filters button:hover,
+.portfolio-filters button.active {
+    background: var(--gradient-primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+}
+
+/* Контейнер проектов */
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* Карточка проекта */
+.portfolio-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Изображение проекта */
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Оверлей */
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(46, 204, 113, 0.9),
+        rgba(26, 188, 156, 0.9)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+/* Контент оверлея */
+.portfolio-overlay h4 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease 0.1s;
+}
+
+.portfolio-overlay p {
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease 0.2s;
+}
+
+.portfolio-item:hover .portfolio-overlay h4,
+.portfolio-item:hover .portfolio-overlay p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Кнопки действий */
+.portfolio-actions {
+    display: flex;
+    gap: 1rem;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease 0.3s;
+}
+
+.portfolio-item:hover .portfolio-actions {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.portfolio-actions a {
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    background: white;
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.portfolio-actions a:hover {
+    background: var(--primary-dark);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Анимация фильтрации */
+.portfolio-container.filtering .portfolio-item {
+    animation: filterAnimation 0.5s ease;
+}
+
+@keyframes filterAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Модальное окно */
+.portfolio-modal .modal-content {
+    background: var(--light-bg);
+    border: none;
+    border-radius: 15px;
+}
+
+.portfolio-modal .modal-header {
+    border-bottom: none;
+    padding: 2rem 2rem 1rem;
+}
+
+.portfolio-modal .modal-body {
+    padding: 1rem 2rem;
+}
+
+.portfolio-modal .modal-footer {
+    border-top: none;
+    padding: 1rem 2rem 2rem;
+}
+
+/* Технологии проекта */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tech-stack .badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    background: var(--gradient-primary);
+}
+
+/* Темная тема */
+[data-theme="dark"] .portfolio-section {
+    background: var(--dark-bg);
+}
+
+[data-theme="dark"] .portfolio-modal .modal-content {
+    background: var(--dark-bg);
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .portfolio-filters button {
+    color: var(--text-light);
+    border-color: var(--primary-light);
+}
+
+/* Медиа запросы */
+@media (max-width: 768px) {
+    .portfolio-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio-filters button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .portfolio-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Анимации появления */
+.portfolio-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.portfolio-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Стили для тегов проекта */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.project-tag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    background: rgba(46, 204, 113, 0.1);
+    color: var(--primary);
+    font-size: 0.875rem;
+}

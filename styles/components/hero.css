@@ -1,0 +1,217 @@
+/* Hero секция */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: var(--light-bg);
+    overflow: hidden;
+}
+
+/* Градиентный фон */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background: var(--gradient-light);
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 0.5;
+    animation: gradientShift 15s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Плавающие элементы дизайна */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, var(--primary-light) 0%, transparent 100%);
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-30px, -30px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Контент Hero секции */
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Заголовок */
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Подзаголовок */
+.hero-section .lead {
+    font-size: 1.25rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards 0.3s;
+}
+
+/* Анимированный текст */
+.typed-text-output {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    min-height: 2.5rem;
+}
+
+.typed-cursor {
+    font-size: 2rem;
+    color: var(--primary);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Кнопка */
+.hero-section .btn {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards 0.6s;
+}
+
+.hero-section .animated-button {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-section .animated-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: all 0.5s ease;
+}
+
+.hero-section .animated-button:hover::before {
+    left: 100%;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Параллакс эффект */
+.hero-parallax {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.parallax-item {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+/* Медиа запросы */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .typed-text-output {
+        font-size: 1.5rem;
+    }
+    
+    .hero-section::before {
+        width: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    }
+}
+
+/* Темная тема */
+[data-theme="dark"] .hero-section {
+    background: var(--dark-bg);
+}
+
+[data-theme="dark"] .hero-section::before {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, transparent 100%);
+    opacity: 0.2;
+}
+
+[data-theme="dark"] .parallax-item {
+    background: var(--primary);
+    opacity: 0.05;
+}
+
+/* Анимация для параллакс элементов */
+.parallax-item:nth-child(1) { animation: floatParallax 8s infinite; }
+.parallax-item:nth-child(2) { animation: floatParallax 12s infinite; }
+.parallax-item:nth-child(3) { animation: floatParallax 10s infinite; }
+.parallax-item:nth-child(4) { animation: floatParallax 14s infinite; }
+.parallax-item:nth-child(5) { animation: floatParallax 16s infinite; }
+
+@keyframes floatParallax {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(100px, 50px);
+    }
+    50% {
+        transform: translate(50px, 100px);
+    }
+    75% {
+        transform: translate(-50px, 50px);
+    }
+}
