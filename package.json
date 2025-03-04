@@ -1,20 +1,8 @@
 {
   "scripts": {
-    "optimize:css": "postcss styles/**/*.css -d dist/styles",
-    "optimize:js": "terser js/**/*.js -o dist/js/bundle.min.js",
-    "optimize:images": "imagemin assets/images/* -o dist/assets/images --plugin=mozjpeg",
-    "build": "npm run optimize:css && npm run optimize:js && npm run optimize:images",
-    "start": "serve -s dist -l 80"
+    "start": "serve -l 80"
   },
   "dependencies": {
     "serve": "^14.0.0"
-  },
-  "devDependencies": {
-    "postcss-cli": "^8.3.1",
-    "postcss-preset-env": "^7.0.0",
-    "cssnano": "^5.0.0",
-    "terser": "^5.7.0",
-    "imagemin-cli": "^7.0.0",
-    "imagemin-mozjpeg": "^9.0.0"
   }
 }
