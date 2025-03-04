@@ -1,8 +1,15 @@
 {
   "scripts": {
-    "start": "serve -l 80"
+    "start": "serve -l 80",
+    "lint:js": "eslint js/**/*.js",
+    "lint:html": "htmlhint \"*.html\"",
+    "lint": "npm run lint:js && npm run lint:html"
   },
   "dependencies": {
     "serve": "^14.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "htmlhint": "^1.1.4"
   }
 }
