@@ -1,7 +1,8 @@
 /* Общие стили */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Высота навбара */
+    scroll-padding-top: 80px;
+    /* Высота навбара */
 }
 
 body {
