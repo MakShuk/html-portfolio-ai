@@ -22,4 +22,4 @@
              DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
              DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
            run: |
-             ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST "cd $DEPLOY_PATH && git pull origin main"
+             ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST "[ -d $DEPLOY_PATH/.git ] || git clone https://github.com/MakShuk/html-portfolio-ai.git $DEPLOY_PATH; cd $DEPLOY_PATH && git pull origin main"
